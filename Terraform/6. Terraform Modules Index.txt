@@ -1,0 +1,11 @@
+32. Terraform Modules
+Modules are used to organise our terraform configurations and resuse them.
+
+35. Terraform Module Scopes
+In terraform, we can access some variables outside of the module by using output block, but 1 thing to be noted here, only those variables which are returned by our module.
+
+36. Terraform Modules - Public Registry
+We can access info about all Terraform Modules from public repository which is present at registry.terraform.io.
+Here, we can get all info about the terraform modules.
+We can also create our own module here but need to follow some conventions.
+ 

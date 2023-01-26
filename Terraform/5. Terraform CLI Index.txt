@@ -1,0 +1,22 @@
+26. Auto formatting Terraform Code
+By using "terraform fmt", we can format our terraform code into correct style and format.
+
+27. Replace resources using Terraform taint
+If we want to rebuild a terraform resource we can "terraform taint <resource_name>" command but this command is deprecated after version=15.2.
+Now we can use [terraform apply -replace="<resource_name>"] command.
+
+28. Terraform Import
+Terraform import is used to get the access to the already created resources.
+
+29. Terraform Workspace - OSS
+Worspace is a terraform feature that alows us to organise infrastructure by environment and variables in a single directory.
+We have bunch of terraform workspace commands that we can use as per our need.
+
+30. Terraform state cli
+There are bunch of[terraform state] commands could be used to maintains the state of our resources.
+
+31. Debugging Transform
+We can debug the code in terraform by using command [TF_LOG], it will display LOGS when we execute any terraform command. 
+We also have [TF_LOGS_PATH], which can set the location, where our LOGS will be displayed.
+
+

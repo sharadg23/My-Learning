@@ -1,0 +1,23 @@
+https://github.com/btkrausen/hashicorp/tree/master/terraform
+
+9. Terrafrom Basics
+Basic Terraform command (init, validate, plan, apply, destroy)
+
+10. HCL HashiCorps Configurations Language
+Terrafrom is written in this language
+
+11. Terraform Plugin-Based Architecture
+Details about terraform providers, terraform provider registry and it's configurations locally
+
+13. Terraform Resource Block
+Example of terraform resource block configurations with S3 Bucket, Security Groups in AWS.
+
+21. Terraform Provider Installation and Versioning
+Here, I learn about terraform versioning. We can specify the version of our terraform and required providers in terraform.tf file while starting the file, if there will be any version mismatch, it will throw error.
+
+22. Generating SSH Key using Terraform TLS provider
+Here, we downloaded the TLS provider by using it, we generated the SSH key, that could be used for authentication purpose in servers.
+
+25. Terraform Provisioner
+Here, we created an EC2 server and use it to deploy our web application on this server. We did a lot of things like adding the Security Groups, SSH Key, etc.
+

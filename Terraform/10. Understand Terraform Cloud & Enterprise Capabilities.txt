@@ -1,0 +1,16 @@
+====================================================================>
+67. Terraform Cloud - Secure variables
+Inside terraform workspace, we can declare the variables inside (variable set), which are reusable inside all the workspaces.
+
+====================================================================>
+69. Private Module Registry
+Terraform allows us to create our own modules and plugins that we can publish in terraform workspace and exclusively used for private domain.
+
+====================================================================>
+70. Sentinal Policy
+It is called Policy as code. Here, we define a set of policy, which we be run between Plan and Apply Stage. If these policies fails, then terraform apply command couldn't be executed.
+There are 3 policies allowed by terraform
+1) Advisory: These policy are allow to fail but they issue warning to user.
+2) Hard Mandatory: These policies are mandatory to pass.
+
+====================================================================>

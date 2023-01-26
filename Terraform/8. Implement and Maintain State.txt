@@ -1,0 +1,68 @@
+
+====================================================================
+44. Terraform State - Default Local Backend
+
+The terraform state file, by default, is named terraform. tfstate and is held in the same directory where Terraform is run. It is created after running terraform apply . The actual content of this file is a JSON formatted mapping of the resources defined in the configuration and those that exist in your infrastructure.
+
+By using [terraform show] command, we can get state of our infrastructure in details.
+By using [terraform state list] command, we can get summary of the state of our configurations.
+
+By default, the current state of our infrastructure will store in terraform.tfstate and old state file will go in terraform.tfstate.backup.
+We can change these directory location, by changing info in local backend.
+For ex: 
+In terraform.tf file,		terraform {
+								backend "local"{
+									path = "<Location of state file>"
+								}
+							}
+
+
+======================================================================
+45. Terraform state locking
+
+When we have issue an [terraform apply] command, then until we execute it completely, we will have temporary locking here and the state cannot be changedby other terraform command from somewhere else.
+
+======================================================================
+46. Terraform State - Backend Authentication
+
+Terraform state files are very sensitive, we want to protect them, so what we can do is??
+we can store our state files in AWS S3 Buckets or Terraform Enhanced Cloud Service instead of local backend ans there, we can provide them authentication.
+
+======================================================================
+47. Terraform State - Backend Storage
+
+Terraform has 2 standard backend - 1) AWS S3 bucket 2) Http Backend
+In S3 bucket,
+1. We can create backup of our state files by using versioning.
+2. We can create locks on our file by creating dynamoDB tables.
+3. Our S3 bucket is protected by various security groups and IAM user roles, which protect ou state files from accidental updates.
+
+In HttpBackend, we setup a server, where we can setup our state files but it is not recommended for production.
+
+=======================================================================
+48. Terraform Remote State - Enhanced Backend
+
+We can actually store our terraform state into Enhanced Backend, it is terraform native cloud, where we can store our states and ececute terraform operations remotely.
+
+=======================================================================
+49. Terraform State Migration
+
+Sometime due to business need, we might need to send our state file to some other location. Hence, we just update our backend and issue [terraform init -migrate] command to do migration.
+
+=======================================================================
+50. Terraform State Refresh
+
+[terraform refresh] command is used, whenever we made any change in our infratructure outside of our  terraform workflow.
+For ex: manually changing AWS infra without changing configurtion file in terraform directory. Hence our state is changed and we can issue refresh command to update our workflow.
+Ideally, it is not a good pratice but sometime, we can use it.
+
+=======================================================================
+51. Terraform Backend Configuration
+
+Terraform provides us flexibility to do partial configuration where we can specify the location of our state.
+
+=======================================================================
+52. Sensitive data in terraform state
+
+Terraform state files contains lot of sensitive data, in order to protect it, we should prefer storing our state file in AWS S3 bucket or Enhanced Backend.
+

@@ -1,0 +1,63 @@
+=======================================================================
+53. Local Variables
+
+Certain local variables in our codes are repeated multiple time, and in future, if we made any change, we have to update those variables everywhere.
+Hence, we can use local block of terraform, declare our variable here and can reference this local block from wherever we need these values.
+
+=======================================================================
+54. Input Variables
+
+In terraform, there are many ways to create an input variable.
+They have order of preference from TOP-TO-BOTTOM
+1) Default variable      - which can be passed inside variables.tf file.
+2) Environment variables - passed by EXPORT TF_VAR_"var_name"
+3) terraform.tfvars      - we can create a file and passed our values.
+4) Terraform CLI         - during terraform plan, we can also pass -var var_name = var_value
+
+=======================================================================
+55. Terraform Output
+Output blocks are used to export the data from our configurations to CLI or from child module to parent module.
+We can see outputs when we execute [terraform apply] or [terraform output]
+
+=======================================================================
+57. Secure secrets in terraform code
+
+We should never store sensitive data in our terraform infrastructure. what we can do is, we can store our data in Vault(provided by Hashicorp).
+We can store our data in Vault and  then use Vault providers in our terraform infrastructure to import our credentials.
+
+=======================================================================
+58. Variable Collection & Structure Type
+
+Here, we have learn about the various type of variables that could be included in our variable blocks such as list, map, tuple.
+For better understanding, better watch video or refer pdf.
+
+=======================================================================
+59. Working with data block
+
+Data blocks are used to pick up the data from the remote services.
+
+=======================================================================
+60. Terraform Built-in function
+
+These functions are used to manipulate our variables, we can get more info on https://developer.hashicorp.com/terraform/language/functions
+
+=======================================================================
+61. Dynamic Blocks
+
+Dynamic blocks are just like for-each expression, they are used in other block to increase reusability but they are mostly not recommended.
+
+=======================================================================
+62. Terraform graph
+
+[terraform graph] command is used to generate a dot file, which can be used inside graph visualization tool. For ex: webgraphviz.com
+The graph shows visual representation of our resources and their dependencies.
+
+=======================================================================
+63. Terraform Resource Lifecycle
+
+Terraform resource life cycle is used to control the order in which terraform control and destroy the resources.
+
+For ex: When resource A is dependant on resource B, then in that case we cannot replace resoucre B because resource B will first get destroyed then created and in it's absence resource A cannot survice. Hence terraform will not execute our plan. In that case, we need to create the new resource B first and then destroy the old one. For that, we need to change the terraform resouce lifecycle using resouce block.
+
+
+
