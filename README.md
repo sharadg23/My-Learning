@@ -1,2 +1,2 @@
 # My-Learning
-This repo contains the important notes of all the courses and references that I have done.
+This repo contains the important notes of all the courses & learnings that I have done in past.
